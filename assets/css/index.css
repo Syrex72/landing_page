@@ -1,15 +1,17 @@
-:root{
+:root {
     --primary-color: #0A1128;
     --secundary-color: #787838;
     --terciary-color: #855325;
     --white-color: #fff;
+    --light-gray: #EEE;
     --gap: 3rem;
 }
 
 
 html {
     scroll-behavior: smooth;
-    font-size: 62.5%; /* 10px = 1rem */
+    font-size: 62.5%;
+    /* 10px = 1rem */
 }
 
 * {
@@ -24,48 +26,58 @@ body {
     color: var(--primary-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
-h1{
+h1 {
     font-size: 6rem;
     text-transform: uppercase;
 }
 
-h2{
+h2 {
     font-size: 5.5rem;
     text-transform: uppercase;
 }
 
-h3{
+h3 {
     font-size: 5rem;
     text-transform: uppercase;
 }
 
-h4{
+h4 {
     font-size: 4.5rem;
     text-transform: uppercase;
 }
 
-h5{
+h5 {
     font-size: 4rem;
     text-transform: uppercase;
 }
 
-h6{
+h6 {
     font-size: 3.5rem;
     text-transform: uppercase;
 }
 
-.main-bg{
-    background-image: url("../img/confetti-doodles.svg"); 
+a {
+    text-decoration: none;
+}
+
+
+.main-bg {
+    background-image: url("../img/confetti-doodles.svg");
     background-size: cover;
     background-position: center center;
     color: var(--white-color);
 }
 
-.main-content{
+.main-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: var(--gap);
@@ -73,4 +85,63 @@ h6{
 
 .page-section {
     min-height: 100vh;
+}
+
+.white-content {
+    background-color: var(--white-color);
+}
+
+.menu {
+    background-color: var(--white-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: solid 1px var(--light-gray);
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+}
+
+.menu h1 a {
+    color: inherit;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: crimson;
+    transition: 0.25s ease-in-out;
+}
+
+.menu ul li a:hover::after {
+    width: 50%;
+    left: 25%;
 }
