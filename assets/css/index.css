@@ -1,103 +1,13 @@
-:root {
-    --primary-color: #0A1128;
-    --secundary-color: #787838;
-    --terciary-color: #855325;
-    --white-color: #fff;
-    --light-gray: #EEE;
-    --gap: 3rem;
-}
-
-
-html {
-    scroll-behavior: smooth;
-    font-size: 62.5%;
-    /* 10px = 1rem */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
-    color: var(--primary-color);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h1 {
-    font-size: 6rem;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 5.5rem;
-    text-transform: uppercase;
-}
-
-h3 {
-    font-size: 5rem;
-    text-transform: uppercase;
-}
-
-h4 {
-    font-size: 4.5rem;
-    text-transform: uppercase;
-}
-
-h5 {
-    font-size: 4rem;
-    text-transform: uppercase;
-}
-
-h6 {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-.main-bg {
-    background-image: url("../img/confetti-doodles.svg");
-    background-size: cover;
-    background-position: center center;
-    color: var(--white-color);
-}
-
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--gap);
-}
-
-.page-section {
-    min-height: 100vh;
-}
-
-.white-content {
-    background-color: var(--white-color);
-}
-
 .menu {
     background-color: var(--white-color);
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    border-bottom: solid 1px var(--light-gray);
+    z-index: 1;
+    border-bottom: solid 0.1rem var(--light-gray);
+
 }
 
 .menu-content {
@@ -137,11 +47,45 @@ a {
     left: 50%;
     width: 0;
     height: 0.2rem;
-    background: crimson;
+    background: var(--secundary-color);
     transition: 0.25s ease-in-out;
+}
+
+.menu ul li a:hover {
+    background-color: hsla(0, 0%, 93%, 0.349);
+    transition: 0.25s ease-in;
 }
 
 .menu ul li a:hover::after {
     width: 50%;
     left: 25%;
+}
+
+.menu-spacing {
+    height: 6.5rem;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    height: 100vh;
+}
+
+.intro-text-content, .intro-img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.intro-text-content h2 {
+    font-size: 6rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.intro-img img {
+    max-width: 100%;
+    height: auto;
 }
